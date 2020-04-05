@@ -55,7 +55,7 @@
               <v-btn
                 text
                 color="deep-purple accent-4"
-                :to="{ name: 'games', params: { id: developer.id }}"
+                @click.stop="redirectToGame(developer.id)"
               >
                 Show Games
               </v-btn>
@@ -73,7 +73,6 @@
 </template>
 
 <script>
-// import axios from 'axios'
 export default {
   data: () => ({
     developers: null,
@@ -110,6 +109,9 @@ export default {
         .catch((error) => {
           console.log(error)
         })
+    },
+    redirectToGame (id) {
+      this.$router.push({ name: 'games', params: { id: id } })
     }
   }
 }

@@ -9,7 +9,7 @@ export default [
     component: Developers
   },
   {
-    path: '/developer/:id/games',
+    path: '/developer/games/:id',
     name: 'games',
     component: Games
   },
