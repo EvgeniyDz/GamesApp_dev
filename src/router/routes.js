@@ -6,16 +6,16 @@ export default [
   {
     path: '/',
     name: 'developers',
-    component: Developers
+    component: Developers,
   },
   {
     path: '/developer/games/:id',
     name: 'games',
-    component: Games
+    component: Games,
   },
   {
     path: '/platforms',
     name: 'platforms',
-    component: Platforms
-  }
+    component: Platforms,
+  },
 ]

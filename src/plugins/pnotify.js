@@ -5,7 +5,7 @@ const notificationsStack = {
   dir2: 'left',
   push: 'top',
   spacing1: 5,
-  spacing2: 5
+  spacing2: 5,
 }
 
 const notify = function (title, message, style = 'primary') {
@@ -14,7 +14,7 @@ const notify = function (title, message, style = 'primary') {
     addClass: 'stack-bottom-right bg-' + style + ' border-' + style,
     icon: 'icon-info22',
     stack: notificationsStack,
-    delay: 30000
+    delay: 30000,
   }
 
   if (message) {

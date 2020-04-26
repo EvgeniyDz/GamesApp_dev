@@ -10,7 +10,7 @@ axios.defaults.paramsSerializer = params => {
 axios.interceptors.request.use(request => {
   request.headers = {
     'x-rapidapi-hos': 'rawg-video-games-database.p.rapidapi.com',
-    'x-rapidapi-key': '0cb09984b7msh8da7946b53116b2p100409jsn2b71542652a3'
+    'x-rapidapi-key': '0cb09984b7msh8da7946b53116b2p100409jsn2b71542652a3',
   }
 
   // request.headers.x-rapidapi-host = `rawg-video-games-database.p.rapidapi.com`

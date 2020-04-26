@@ -4,7 +4,7 @@
       v-if="!loaded"
       indeterminate
       color="primary"
-    ></v-progress-circular>
+    />
     <v-container
       v-else
       class="fill-height"
@@ -73,46 +73,46 @@
 </template>
 
 <script>
-export default {
-  data: () => ({
-    developers: null,
-    page: 1,
-    count: null,
-    searchVal: null,
-    loaded: false
-  }),
-  watch: {
-    page () {
+  export default {
+    data: () => ({
+      developers: null,
+      page: 1,
+      count: null,
+      searchVal: null,
+      loaded: false,
+    }),
+    watch: {
+      page () {
+        this.getDevelopers()
+      },
+      searchVal () {
+        if (this.searchVal === null) this.getDevelopers()
+      },
+    },
+    mounted () {
       this.getDevelopers()
     },
-    searchVal () {
-      if (this.searchVal === null) this.getDevelopers()
-    }
-  },
-  mounted () {
-    this.getDevelopers()
-  },
-  methods: {
-    getDevelopers () {
-      this.$http.get('https://rawg-video-games-database.p.rapidapi.com/developers', {
-        params: {
-          page: this.page,
-          page_size: 20,
-          search: this.searchVal
-        }
-      })
-        .then((response) => {
-          this.developers = response.data.results
-          this.count = response.data.count
-          this.loaded = true
+    methods: {
+      getDevelopers () {
+        this.$http.get('https://rawg-video-games-database.p.rapidapi.com/developers', {
+          params: {
+            page: this.page,
+            page_size: 20,
+            search: this.searchVal,
+          },
         })
-        .catch((error) => {
-          console.log(error)
-        })
+          .then((response) => {
+            this.developers = response.data.results
+            this.count = response.data.count
+            this.loaded = true
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      },
+      redirectToGame (id) {
+        this.$router.push({ name: 'games', params: { id: id } })
+      },
     },
-    redirectToGame (id) {
-      this.$router.push({ name: 'games', params: { id: id } })
-    }
   }
-}
 </script>

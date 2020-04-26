@@ -3,21 +3,27 @@
     v-model="isVisible"
     app
   >
-    <v-list dense>
+    <v-list dense two-line>
       <v-list-item link to="/">
-        <v-list-item-action>
-          <v-icon>mdi-home</v-icon>
-        </v-list-item-action>
         <v-list-item-content>
           <v-list-item-title>Developers</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
       <v-list-item link to="/platforms">
-        <v-list-item-action>
-          <v-icon>mdi-contact-mail</v-icon>
-        </v-list-item-action>
         <v-list-item-content>
           <v-list-item-title>Platforms</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item link to="/huy">
+        <v-list-item-content>
+          <v-list-item-title>
+            <v-badge
+              v-if="favoritesCount"
+              :content="favoritesCount"
+            >
+              Favorites
+            </v-badge>
+          </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -25,21 +31,25 @@
 </template>
 
 <script>
-export default {
-  props: {
-    drawer: Boolean
-  },
-  data () {
-    return {
-      isVisible: this.drawer
-    }
-  },
-  watch: {
-    drawer () {
-      console.log(this)
-
-      this.isVisible = this.drawer
-    }
+  import { mapGetters } from 'vuex'
+  export default {
+    props: {
+      drawer: Boolean,
+    },
+    data () {
+      return {
+        isVisible: this.drawer,
+      }
+    },
+    computed: {
+      ...mapGetters([
+        'favoritesCount',
+      ]),
+    },
+    watch: {
+      drawer () {
+        this.isVisible = this.drawer
+      },
+    },
   }
-}
 </script>

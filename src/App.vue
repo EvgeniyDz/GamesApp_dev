@@ -8,10 +8,10 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>Games App</v-toolbar-title>
     </v-app-bar>
-    <SideBar :drawer="drawer" />
+    <side-bar :drawer="drawer" />
     <router-view>
-      <Developers />
-      <Platforms />
+      <developers />
+      <platforms />
     </router-view>
     <v-footer
       color="indigo"
@@ -23,21 +23,21 @@
 </template>
 
 <script>
-import Developers from './components/Developers'
-import Platforms from './components/Platforms'
-import SideBar from './components/SideBar'
+  import Developers from './components/Developers'
+  import Platforms from './components/Platforms'
+  import SideBar from './components/SideBar'
 
-export default {
-  name: 'App',
+  export default {
+    name: 'App',
 
-  components: {
-    SideBar,
-    Developers,
-    Platforms
-  },
+    components: {
+      SideBar,
+      Developers,
+      Platforms,
+    },
 
-  data: () => ({
-    drawer: null
-  })
-}
+    data: () => ({
+      drawer: null,
+    }),
+  }
 </script>
