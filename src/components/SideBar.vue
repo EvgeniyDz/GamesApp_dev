@@ -14,7 +14,7 @@
           <v-list-item-title>Platforms</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-      <v-list-item link to="/huy">
+      <v-list-item link to="/favorite">
         <v-list-item-content>
           <v-list-item-title>
             <v-badge

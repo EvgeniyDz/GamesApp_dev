@@ -1,6 +1,7 @@
 import Developers from '../components/Developers'
 import Platforms from '../components/Platforms'
 import Games from '../components/Games'
+import Favorites from '../components/Favorites'
 
 export default [
   {
@@ -17,5 +18,10 @@ export default [
     path: '/platforms',
     name: 'platforms',
     component: Platforms,
+  },
+  {
+    path: '/favorite',
+    name: 'favorite',
+    component: Favorites,
   },
 ]

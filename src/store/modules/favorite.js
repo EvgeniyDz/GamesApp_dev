@@ -13,6 +13,9 @@ const getters = {
     state.games.forEach(item => idxs.push(item.id))
     return idxs
   },
+  getGames: state => {
+    return state.games
+  },
 }
 
 // actions
