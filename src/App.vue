@@ -12,6 +12,8 @@
     <router-view>
       <developers />
       <platforms />
+      <games />
+      <favorites />
     </router-view>
     <v-footer
       color="indigo"
@@ -25,6 +27,8 @@
 <script>
   import Developers from './components/Developers'
   import Platforms from './components/Platforms'
+  import Games from './components/Games'
+  import Favorites from './components/Favorites'
   import SideBar from './components/SideBar'
 
   export default {
@@ -34,6 +38,8 @@
       SideBar,
       Developers,
       Platforms,
+      Games,
+      Favorites,
     },
 
     data: () => ({

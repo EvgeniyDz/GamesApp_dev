@@ -40,11 +40,9 @@
               <v-btn
                 text
                 color="deep-purple accent-4"
+                @click="openModal(game.id)"
               >
                 Show More
-              </v-btn>
-              <v-btn :color="favoritesIds.includes(game.id) ? 'blue darken-4' : 'blue lighten-4'" @click="addGameToFavorite(game)">
-                <v-icon>favorite</v-icon>
               </v-btn>
             </v-card-actions>
           </v-card>
@@ -56,23 +54,28 @@
         :total-visible="7"
       />
     </v-container>
+    <v-dialog v-model="dialog"
+              max-width="600"
+    >
+      <game-modal :game="game" />
+    </v-dialog>
   </v-content>
 </template>
 
 <script>
-  import { mapActions, mapGetters } from 'vuex'
+  import GameModal from './GameModal'
   export default {
+    components: {
+      GameModal,
+    },
     data: () => ({
       games: null,
       page: 1,
       loaded: false,
       count: null,
+      dialog: false,
+      game: null,
     }),
-    computed: {
-      ...mapGetters([
-        'favoritesIds',
-      ]),
-    },
     watch: {
       page () {
         this.getGames()
@@ -99,9 +102,10 @@
             console.log(error)
           })
       },
-      ...mapActions([
-        'addGameToFavorite',
-      ]),
+      openModal (id) {
+        this.game = this.games.filter(item => item.id === id)[0]
+        this.dialog = true
+      },
     },
   }
 </script>

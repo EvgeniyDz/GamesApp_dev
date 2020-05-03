@@ -40,6 +40,7 @@
               <v-btn
                 text
                 color="deep-purple accent-4"
+                @click="openModal(game.id)"
               >
                 Show More
               </v-btn>
@@ -48,16 +49,27 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-dialog v-model="dialog"
+              max-width="600"
+    >
+      <game-modal :game="game" />
+    </v-dialog>
   </v-content>
 </template>
 
 <script>
   import { mapGetters } from 'vuex'
+  import GameModal from './GameModal'
   export default {
+    components: {
+      GameModal,
+    },
     data () {
       return {
         loaded: false,
         games: null,
+        game: null,
+        dialog: false,
       }
     },
     computed: {
@@ -68,6 +80,12 @@
     mounted () {
       this.games = this.getGames
       this.loaded = true
+    },
+    methods: {
+      openModal (id) {
+        this.game = this.games.filter(item => item.id === id)[0]
+        this.dialog = true
+      },
     },
   }
 </script>
