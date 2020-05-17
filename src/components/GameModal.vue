@@ -22,10 +22,10 @@
           <v-img max-width="100%" max-height="300px" position="top" :src="screenshot.image" />
         </v-carousel-item>
       </v-carousel>
-      <p class="title text--primary">
+      <p v-if="game.clip" class="title text--primary">
         Video:
       </p>
-      <video :src="game.clip.clip" controls width="100%" />
+      <video v-if="game.clip" :src="game.clip.clip" controls width="100%" />
       <p class="title text--primary">
         Deatil info:
       </p>
