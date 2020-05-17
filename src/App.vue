@@ -26,7 +26,6 @@
 
 <script>
   import Developers from './components/Developers'
-  import Platforms from './components/Platforms'
   import Games from './components/Games'
   import Favorites from './components/Favorites'
   import SideBar from './components/SideBar'
@@ -37,7 +36,6 @@
     components: {
       SideBar,
       Developers,
-      Platforms,
       Games,
       Favorites,
     },

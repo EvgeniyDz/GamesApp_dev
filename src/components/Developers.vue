@@ -111,7 +111,7 @@
           })
       },
       redirectToGame (id) {
-        this.$router.push({ name: 'games', params: { id: id } })
+        this.$router.push({ name: 'games', query: { dev_id: id } })
       },
     },
   }

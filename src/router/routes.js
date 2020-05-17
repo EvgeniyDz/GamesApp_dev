@@ -1,23 +1,18 @@
 import Developers from '../components/Developers'
-import Platforms from '../components/Platforms'
 import Games from '../components/Games'
 import Favorites from '../components/Favorites'
 
 export default [
   {
-    path: '/',
+    path: '/developers',
     name: 'developers',
     component: Developers,
   },
   {
-    path: '/developer/games/:id',
+    path: '/',
+    alias: '/developer/games/:id',
     name: 'games',
     component: Games,
-  },
-  {
-    path: '/platforms',
-    name: 'platforms',
-    component: Platforms,
   },
   {
     path: '/favorite',
