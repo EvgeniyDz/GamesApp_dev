@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "extends": "vuetify",
+  "rules": {
+    "vue/max-attributes-per-line": "off"
+  }
+}

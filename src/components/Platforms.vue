@@ -1,0 +1,10 @@
+<template>
+  <v-content>
+    <v-container
+      class="fill-height"
+      fluid
+    >
+      <p>huy</p>
+    </v-container>
+  </v-content>
+</template>
