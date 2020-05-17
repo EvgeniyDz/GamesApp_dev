@@ -258,7 +258,7 @@
           params: {
             search: this.searchVal,
             ordering: this.sorted,
-            developers: this.$route.params.id,
+            developers: this.$route.query.dev_id,
             page: this.page,
             page_size: 10,
             ...(this.filters.genres ? { genres: this.filters.genres } : {}),

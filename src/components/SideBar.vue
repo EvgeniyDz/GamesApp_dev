@@ -6,12 +6,12 @@
     <v-list dense two-line>
       <v-list-item link to="/">
         <v-list-item-content>
-          <v-list-item-title>Developers</v-list-item-title>
+          <v-list-item-title>Find game</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-      <v-list-item link to="/platforms">
+      <v-list-item link to="/developers">
         <v-list-item-content>
-          <v-list-item-title>Platforms</v-list-item-title>
+          <v-list-item-title>Developers info</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
       <v-list-item link to="/favorite">
