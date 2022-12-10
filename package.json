@@ -29,7 +29,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^5.0.0",
     "pnotify": "^5.0.0-alpha.3",
-    "qs": "^6.9.1",
+    "qs": "^6.9.7",
     "sass": "^1.19.0",
     "sass-loader": "^8.0.0",
     "vue-cli-plugin-vuetify": "^2.0.3",
